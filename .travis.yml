@@ -10,12 +10,11 @@ before_install:
   - pip install --user cpp-coveralls
 
 script:
-  - mkdir build
-  - cd build
-  - aclocal ../HashTable/
-  - autoreconf ../HashTable/
-  - automake --add-missing ../HashTable/
-  - ./HashTable/configure --enable-gcov && make && make check
+  - cd HashTable/
+  - aclocal  
+  - autoreconf
+  - automake --add-missing
+  - ./configure --enable-gcov && make && make check
 ## So make check is pretty much executing tests
 
 after_success:
