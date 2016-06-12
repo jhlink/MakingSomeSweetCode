@@ -6,7 +6,7 @@ AS_IF([test "x${enable_gcov}" = "xyes" ], AC_MSG_RESULT([yes]), AC_MSG_RESULT([n
 AM_CONDITIONAL([ENABLEGCOV],[test "x${enable_gcov}" = "xyes"])
 
 # Remove all optimization flags from CFLAGS
-AM_CPPFLAGS="-O0"
+CFLAGS="-ansi -pedantic -Iinclude -Wall -Wextra -Werror"
 
 if ENABLEGCOV
 	COVERAGE_CXXFLAGS="-fprofile-arcs -ftest-coverage"
