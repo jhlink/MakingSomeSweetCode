@@ -12,7 +12,7 @@ before_install:
 script:
   - mkdir build
   - cd build
-  - ./configure --enable-gcov && make && make check
+  - ./HashTable/configure --enable-gcov && make && make check
 ## So make check is pretty much executing tests
 
 after_success:
