@@ -1854,12 +1854,12 @@ fi
 
 # Remove all optimization flags from CFLAGS
 
-CXXFLAGS=`echo "$CFLAGS" | $SED -e 's/-O[0-9]*//g'`
+AM_CPPFLAGS=`echo "$CFLAGS" | $SED -e 's/-O[0-9]*//g'`
 
 
 if ENABLEGCOV
-COVERAGE_CXXFLAGS="-O0 -fprofile-arcs -ftest-coverage"
-COVERAGE_LDFLAGS="-lgcov"
+	COVERAGE_CXXFLAGS="-O0 -fprofile-arcs -ftest-coverage"
+	COVERAGE_LDFLAGS="-lgcov"
 endif
 
 

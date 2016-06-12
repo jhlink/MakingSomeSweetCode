@@ -7,12 +7,12 @@ AM_CONDITIONAL([ENABLEGCOV],[test "x${enable_gcov}" = "xyes"])
 
 # Remove all optimization flags from CFLAGS
 changequote({,})
-CXXFLAGS=`echo "$CFLAGS" | $SED -e 's/-O[0-9]*//g'`
+AM_CPPFLAGS="-O0"
 changequote([,])
 
 if ENABLEGCOV
-COVERAGE_CXXFLAGS="-O0 -fprofile-arcs -ftest-coverage"
-COVERAGE_LDFLAGS="-lgcov"
+	COVERAGE_CXXFLAGS="-fprofile-arcs -ftest-coverage"
+	COVERAGE_LDFLAGS="-lgcov"
 endif
 
 
