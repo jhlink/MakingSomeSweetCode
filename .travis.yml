@@ -12,8 +12,8 @@ before_install:
 script:
   - cd HashTable/
   - aclocal  
-  - autoreconf
   - automake --add-missing
+  - autoreconf
   - ./configure --enable-gcov && make && make check
 ## So make check is pretty much executing tests
 
