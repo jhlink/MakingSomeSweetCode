@@ -12,7 +12,9 @@ before_install:
 script:
   - mkdir build
   - cd build
+  - aclocal ../HashTable/
   - autoreconf ../HashTable/
+  - automake --add-missing ../HashTable/
   - ./HashTable/configure --enable-gcov && make && make check
 ## So make check is pretty much executing tests
 
